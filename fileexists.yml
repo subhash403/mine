@@ -1,0 +1,9 @@
+---
+  - hosts: localhost
+    tasks: 
+    - name: verify the file is there or not 
+      stat: 
+        path: /home/subhash/subbu.yml
+      register: subbu
+    - debug:
+        msg: "{{ subbu.stat.exists }}"
